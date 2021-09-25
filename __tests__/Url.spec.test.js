@@ -23,16 +23,15 @@ describe('Register Url', () => {
 	};
 	it('returns 200 OK when url request is valid', async () => {
 		const response = await postValidUrl();
-		console.log(response);
-		expect(response.status).toBe(200);
+		expect(response.status).toEqual(200);
 	});
 	it('returns success message when url request is valid', async () => {
 		const response = await postValidUrl();
-		expect(response.body.message).toBe('ok');
+		expect(response.body.message).toEqual('ok');
 	});
 	// it('save the url to the database', async () => {
 	// 	await postValidUrl();
 	// 	const userList = await User.findAll();
-	// 	expect(userList.length).toBe(1);
+	// 	expect(userList.length).toEqual(1);
 	// });
 });
