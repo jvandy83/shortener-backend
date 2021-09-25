@@ -39,7 +39,6 @@ app.post('/api/create-url', async (req, res) => {
 	// 		message: 'url already exists',
 	// 	});
 	// }
-	console.log(req.body);
 	await Url.create(req.body);
 	return res.status(200).json({
 		message: 'ok',

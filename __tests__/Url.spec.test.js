@@ -17,10 +17,13 @@ describe('Register Url', () => {
 	const postValidUrl = () => {
 		return request(app).post('/api/create-url').send({
 			actualUrl: 'https://google.com',
+			aliasUrl: 'http://localhost:5500/api/fetch-url/4zDyC',
+			hash: '4zDyC',
 		});
 	};
 	it('returns 200 OK when url request is valid', async () => {
 		const response = await postValidUrl();
+		console.log(response);
 		expect(response.status).toBe(200);
 	});
 	it('returns success message when url request is valid', async () => {
