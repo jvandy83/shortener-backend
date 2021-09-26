@@ -29,9 +29,9 @@ describe('Register Url', () => {
 		const response = await postValidUrl();
 		expect(response.body.message).toEqual('ok');
 	});
-	// it('save the url to the database', async () => {
-	// 	await postValidUrl();
-	// 	const userList = await User.findAll();
-	// 	expect(userList.length).toEqual(1);
-	// });
+	it('save the url to the database', async () => {
+		await postValidUrl();
+		const urlList = await Url.findAll();
+		expect(urlList.length).toEqual(1);
+	});
 });
